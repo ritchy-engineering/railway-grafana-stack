@@ -5,10 +5,6 @@ global:
     monitor: 'ritchy-monitor'
 
 scrape_configs:
-  - job_name: 'prometheus'
-    static_configs:
-      - targets: ['localhost:9090']
-
   - job_name: 'ritchy-api'
     static_configs:
       - targets: ['api.railway.internal']
