@@ -10,6 +10,9 @@ scrape_configs:
       - targets: ['api.railway.internal']
     metrics_path: '/metrics'
     scrape_interval: 10s
+    basic_auth:
+      username: L8GTF?4AL45h
+      password: 5ytrjfkpp#8T
 
   # - job_name: 'example_api'
   #   scheme: http
