@@ -1,10 +1,23 @@
 global:
   scrape_interval: 15s # Default scrape interval
+  evaluation_interval: 15s
+  external_labels:
+    monitor: 'ritchy-monitor'
 
 scrape_configs:
   - job_name: 'prometheus'
     static_configs:
       - targets: ['localhost:9090']
+
+  - job_name: 'ritchy-api'
+    scheme: https
+    static_configs:
+      - targets: ['staging.api.ritchy.io']
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+    basic_auth:
+      username: L8GTF?4AL45h
+      password: 5ytrjfkpp#8T
 
   # - job_name: 'example_api'
   #   scheme: http
